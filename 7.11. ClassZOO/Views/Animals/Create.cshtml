@@ -1,0 +1,51 @@
+﻿@model _7._11._ClassZOO.Models.Viewmodels.CreateAnimalsViewModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>CreateAnimalViewmodel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="AnimalName" class="control-label"></label>
+                <input asp-for="AnimalName" class="form-control" />
+                <span asp-validation-for="AnimalName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Spesies" class="control-label"></label>
+                <input asp-for="Spesies" list="speciesList" class="form-control" />
+                <span asp-validation-for="Spesies" class="text-danger"></span>
+                <datalist id="speciesList">
+                    @foreach (string species in Model.SpesiesList)
+                    {
+                        <option value="@species">@species</option>
+                    }
+                </datalist>
+            </div>
+            <div class="form-group">
+                <label asp-for="CalleByName" class="control-label"></label>
+                <input asp-for="CalleByName" class="form-control" />
+                <span asp-validation-for="CalleByName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quantity" class="control-label"></label>
+                <input asp-for="Quantity" class="form-control" />
+                <span asp-validation-for="Quantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

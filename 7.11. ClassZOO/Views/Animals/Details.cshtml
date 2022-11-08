@@ -1,0 +1,21 @@
+﻿@model _7._11._ClassZOO.Models.Viewmodels.CreateAnimalsViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+<dl>
+    <dt>Animal</dt>    
+    <dd>@Model.AnimalName</dd>
+
+    <dt>Species</dt>    
+    <dd>@Model.Spesies</dd>
+
+    <dt>Called by name</dt>    
+    <dd>@Model.CalleByName</dd>
+</dl>
+<a asp-action="ZooPark">Go back to zoo</a>
+
+
+
