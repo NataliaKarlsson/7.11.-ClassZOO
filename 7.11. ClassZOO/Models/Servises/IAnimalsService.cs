@@ -10,5 +10,6 @@ namespace _7._11._ClassZOO.Models.Servises
         Animals FindById(int id);
         void Edit(int id, CreateAnimalsViewModel editAnimal);
         void Remove(int id);
+        Animals LastAdded();
     }
 }

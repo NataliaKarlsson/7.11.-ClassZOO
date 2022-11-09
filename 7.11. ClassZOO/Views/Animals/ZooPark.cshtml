@@ -12,8 +12,8 @@
     <thead>
         <hr />
     <td>Animal</td>
-    <td>Species</td>
-    <td>CalledByName</td>
+    <td>Spesies</td>
+    <td>CalleByName</td>
     <td>Quantity</td>
     </thead>
     <tbody>
@@ -30,8 +30,8 @@
 </table>
 <div class="row">
     <div class="col-3">Animal</div>
-    <div class="col-3">Species</div>
-    <div class="col-3">CallBy Name</div>
+    <div class="col-3">Spesies</div>
+    <div class="col-3">CalleByName</div>
     <div class="col-3">Quantity</div>
 
 
@@ -40,12 +40,12 @@
 
 </div>
 @foreach (Animals animal in Model)
-        {
-            <tr>
+{
+            @*<tr>
                 <td>@animal.AnimalName</td>
                 <td>@animal.Spesies</td>
                 <td>@animal.CalleByName</td>
                 <td>@animal.Quantity</td>
-            </tr>
-        }
-
+            </tr>*@
+        
+        <partial name="_AnimalRow" model="animal"></partial>}

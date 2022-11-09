@@ -53,5 +53,33 @@ namespace _7._11._ClassZOO.Controllers
             }
             return View(animal);
         }
+        public IActionResult LastAnimalArrivel()
+        {
+            Animals animal = _animalsService.LastAdded();
+            if (animal != null)
+            {
+                return PartialView("_AnimalRow", animal);
+            }
+            return NotFound();
+        }
+        public IActionResult AjaxAnimalList()
+        {
+            List<Animals> animal = _animalsService.GetAll();
+
+            if (animal != null)
+            {
+                return PartialView("_AnimalList", animal);
+            }
+            return BadRequest();
+        }
+        public IActionResult LastAnimalArrivelJSON()
+        {
+            Animals animal = _animalsService.LastAdded();
+            if (animal != null)
+            {
+                return Json(animal);
+            }
+            return NotFound();
+        }
     }
 }

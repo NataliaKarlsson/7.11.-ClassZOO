@@ -66,5 +66,14 @@ namespace _7._11._ClassZOO.Models.Servises
             }
             return;
         }
+        public Animals? LastAdded()
+        {
+            List<Animals> animals = _animalRepo.GetAll();
+            if(animals.Count < 1)
+            {
+                return null;
+            }
+            return animals.Last();
+        }
     }
 }

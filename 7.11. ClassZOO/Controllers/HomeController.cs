@@ -1,21 +1,25 @@
 ﻿using _7._11._ClassZOO.Models;
+using _7._11._ClassZOO.Models.repos;
+using _7._11._ClassZOO.Models.Servises;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
 namespace _7._11._ClassZOO.Controllers
 {
+    
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly IAnimalsService _animalsService;
+        
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController()
         {
-            _logger = logger;
+            _animalsService = new AnimalsService(new InMemoryRepo());
         }
 
         public IActionResult Index()
         {
-            return View();
+            return View(_animalsService.LastAdded());
         }
 
         public IActionResult Privacy()
